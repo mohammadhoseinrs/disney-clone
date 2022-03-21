@@ -1,0 +1,120 @@
+.navbar__container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background-color: #090b13;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 36px;
+    z-index: 4;
+}
+.navbar__logo{
+    width: 80px;
+    margin-top: 4px;
+    max-height: 70px;
+}
+.navbar__logo img {
+    width: 100%;
+}
+.navbar__item{
+    flex: 1;
+    display: flex;
+}
+.navbar__item >div {
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+}
+.navbar__item >div > img{
+    width: 20px;
+    min-width: 20px;
+    margin-right: 6px;
+}
+.navbar__item >div >a{
+    color: rgb(249, 249, 249);
+    font-size: 13px;
+    letter-spacing: 1.42px;
+    line-height: 1.08;
+    padding: 2px 0px;
+    white-space: nowrap;
+    position: relative;
+}
+
+@media (max-width:768px){
+    .navbar__item{
+        display: none;
+    }
+}
+.navbar__item >div >a::before{
+    background-color: rgb(249, 249, 249);
+    border-radius: 0 0 4px 4px;
+    content: '';
+    opacity: 0;
+    height: 2px;
+    left: 0px;
+    position: absolute;
+    right: 0px;
+    bottom: -6px;
+    transform-origin: left center;
+    transform: scaleX(0);
+    transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    visibility: hidden;
+    width: auto;
+
+}
+.navbar__item >div:hover a::before{
+    transform: scale(1);
+    visibility: visible;
+    opacity: 1 !important;
+}
+.navbar__login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.navbar__login p{
+    letter-spacing: 4px;
+    padding: 10px 15px  ;
+    border: 1px solid #F9F9F9;
+    border-radius: 5px;
+    transition: all ease-in-out 0.2s;
+    cursor: pointer;
+}
+.navbar__login p:hover{
+    background-color: #F9F9F9;
+    color: #090b13;
+    border-color: transparent;
+}
+.navbar__img{
+    width: 30px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.navbar__img img{
+    border-radius: 100%;
+    width: 100%;
+    transition: all ease-in-out 0.5s;
+}
+.navbar__profile{
+    transition: all ease-in-out 5s;
+}
+.navbar__dropdown{
+    position: absolute;
+    top: 50px;  
+    right: 0;
+    background: rgba(19, 19, 19);
+    border: 1px solid rgba(151, 151, 151, 0.39);
+    border-radius: 5px;
+    padding: 10px;
+    letter-spacing: 4px;
+    font-size: 14px;
+    display: none;
+    cursor: pointer;
+}
+.navbar__profile:hover .navbar__dropdown{
+    display: block;
+}
